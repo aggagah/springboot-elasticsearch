@@ -38,4 +38,9 @@ public class ProductController {
 //        System.out.println("ID : "+id);
         return new ResponseEntity<>(productService.updateProduct(productRequestDto, id), HttpStatus.OK);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> detailProduct(@PathVariable String id){
+        return new ResponseEntity<>(productService.detailProduct(id), HttpStatus.OK);
+    }
 }
